@@ -23,6 +23,7 @@ rec {
   quiltServers = callPackage ./quilt-servers { inherit vanillaServers; };
   legacyFabricServers = callPackage ./legacy-fabric-servers { inherit vanillaServers; };
   paperServers = callPackage ./paper-servers { inherit vanillaServers; };
+  foliaServers = callPackage ./folia-servers { inherit vanillaServers; };
   velocityServers = callPackage ./velocity-servers { };
 
   minecraftServers = lib.mergeAttrsList [
@@ -31,12 +32,14 @@ rec {
     quiltServers
     legacyFabricServers
     paperServers
+    foliaServers
   ];
 
   vanilla-server = vanillaServers.vanilla;
   fabric-server = fabricServers.fabric;
   quilt-server = quiltServers.quilt;
   paper-server = paperServers.paper;
+  folia-server = foliaServers.folia;
   velocity-server = velocityServers.velocity;
   minecraft-server = vanilla-server;
 }

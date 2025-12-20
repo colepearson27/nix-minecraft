@@ -75,6 +75,7 @@
             fabric-server
             quilt-server
             paper-server
+            folia-server
             velocity-server
             minecraft-server
             nix-modrinth-prefetch
