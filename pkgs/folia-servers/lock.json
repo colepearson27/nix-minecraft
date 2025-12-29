@@ -421,6 +421,22 @@
     "2": {
       "url": "https://api.papermc.io/v2/projects/folia/versions/1.21.11/builds/2/downloads/folia-1.21.11-2.jar",
       "sha256": "15e2a9dcca5f11f4aa02cf36a9d01ea2972ddaa5d479edeabc08bc83a32a48e3"
+    },
+    "3": {
+      "url": "https://api.papermc.io/v2/projects/folia/versions/1.21.11/builds/3/downloads/folia-1.21.11-3.jar",
+      "sha256": "787016fab2f83b365b8e14d8b22bbc1758e2630795ce8e42dff51d917726f757"
+    },
+    "4": {
+      "url": "https://api.papermc.io/v2/projects/folia/versions/1.21.11/builds/4/downloads/folia-1.21.11-4.jar",
+      "sha256": "e7d1c95ea083cb199400b96c2f40d54a3e2440a86019712799d55a7d948df1fb"
+    },
+    "5": {
+      "url": "https://api.papermc.io/v2/projects/folia/versions/1.21.11/builds/5/downloads/folia-1.21.11-5.jar",
+      "sha256": "e942a1b1c734285b00b3ad7e6138231916372ec2011dc0abb15f268cf33d7275"
+    },
+    "6": {
+      "url": "https://api.papermc.io/v2/projects/folia/versions/1.21.11/builds/6/downloads/folia-1.21.11-6.jar",
+      "sha256": "dd9024830591269724b5940324eda64f533e8318af77e30584411a0911311d70"
     }
   }
 }
