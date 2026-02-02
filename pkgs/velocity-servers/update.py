@@ -45,21 +45,20 @@ def get_game_versions(client):
 def get_builds(version, client):
     print(f"Fetching builds for {version}")
     data = client.get(f"{ENDPOINT}/versions/{version}/builds").json()
-    return data["builds"]
+    return data
 
 
 def main(lock, client):
     output = {}
     print("Starting fetch")
 
-    for version in get_versions(client):
-        output[version] = {}
+    for version in get_game_versions(client):
+        version_builds = {}
         for build in get_builds(version, client):
-            build_number = build["build"]
-            build_channel = build["channel"]
-            build_sha256 = build["downloads"]["application"]["sha256"]
-            build_filename = build["downloads"]["application"]["name"]
-            build_url = f"{ENDPOINT}/versions/{version}/builds/{build_number}/downloads/{build_filename}"
+            build_number = build["id"]
+            build_sha256 = build["downloads"]["server:default"]["checksums"]["sha256"]
+            build_filename = build["downloads"]["server:default"]["name"]
+            build_url = build["downloads"]["server:default"]["url"]
             output[version][build_number] = {
                 "url": build_url,
                 "sha256": build_sha256,
