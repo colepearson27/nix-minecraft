@@ -456,6 +456,65 @@ in
                 '';
               };
 
+              bannedPlayers = mkOption {
+                type = types.attrsOf (
+                  types.coercedTo minecraftUUID (v: { uuid = v; }) (
+                    types.submodule {
+                      options = {
+                        uuid = mkOption {
+                          type = minecraftUUID;
+                          description = "The banned player's UUID";
+                          example = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+                        };
+                        created = mkOption {
+                          type = lib.types.nullOr lib.types.str;
+                          description = "The date of the ban";
+                          default = null;
+                          example = "2025-12-01 09:00:00 -0500";
+                        };
+                        source = mkOption {
+                          type = lib.types.nullOr lib.types.str;
+                          description = "The source of the ban";
+                          default = null;
+                          example = "Server";
+                        };
+                        expires = mkOption {
+                          type = lib.types.nullOr lib.types.str;
+                          description = "When the ban expires, if ever";
+                          default = null;
+                          example = "forever";
+                        };
+                        reason = mkOption {
+                          type = lib.types.nullOr lib.types.str;
+                          description = "The reason for the ban, if any.";
+                          default = null;
+                          example = "Banned by an operator.";
+                        };
+                      };
+                    }
+                  )
+                );
+                default = { };
+                description = ''
+                  Banned players. See <link xlink:href="https://docs.papermc.io/paper/reference/vanilla-data-files/"/>.
+
+                  To use a non-declarative banned player list, don't fill in this value.
+                  As long as it is empty, no banned players file is generated.
+                '';
+                example = literalExpression ''
+                  {
+                    username1 = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+                    username2 = {
+                      uuid = "yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy";
+                      created = "2025-12-01 09:00:00 -0500";
+                      source = "(Unknown)";
+                      expires = "forever";
+                      reason = "Banned by an operator.";
+                    };
+                  }
+                '';
+              };
+
               serverProperties = mkOption {
                 type =
                   with types;
@@ -484,6 +543,25 @@ in
 
                   To use a non-declarative server.properties, don't fill in this value.
                   As long as it is empty, no server.properties file is generated.
+                '';
+              };
+
+              allowedSymlinks = mkOption {
+                default = [ ];
+                type = with types; listOf str;
+                example = literalExpression ''
+                  [
+                    "/mnt/worlds"
+                  ]
+                '';
+                description = ''
+                  Minecraft 1.20+ disallows symlinks inside world directories, unless
+                  its destinations are allow-listed. /nix/store is allowed by default,
+                  but you may add more destinations through this option. See
+                  <link xlink:href="https://help.minecraft.net/hc/en-us/articles/16165590199181"/>
+                  for more information.
+
+                  Use lib.mkForce to shadow the default value (i.e. if you want to exclude /nix/store).
                 '';
               };
 
@@ -556,6 +634,10 @@ in
                 default = { };
                 example = options.services.minecraft-servers.managementSystem.example;
               };
+            };
+
+            config = {
+              allowedSymlinks = [ "/nix/store" ];
             };
           }
         )
@@ -689,14 +771,34 @@ in
                 level = v.level;
                 bypassesPlayerLimit = v.bypassesPlayerLimit;
               }) conf.operators;
+              "banned-players.json".value = mapAttrsToList (
+                n: v:
+                {
+                  name = n;
+                  uuid = v.uuid;
+                }
+                // lib.optionalAttrs (v.created != null) {
+                  created = v.created;
+                }
+                // lib.optionalAttrs (v.source != null) {
+                  source = v.source;
+                }
+                // lib.optionalAttrs (v.expires != null) {
+                  expires = v.expires;
+                }
+                // lib.optionalAttrs (v.reason != null) {
+                  reason = v.reason;
+                }
+              ) conf.bannedPlayers;
               "server.properties".value = conf.serverProperties;
+              "allowed_symlinks.txt".value = conf.allowedSymlinks;
             }
             // conf.files
           );
 
           msConfig = managementSystemConfig name conf;
 
-          markManaged = file: ''echo "${file}" >> .nix-minecraft-managed'';
+          markManaged = file: "echo ${file} >> .nix-minecraft-managed";
           cleanAllManaged = ''
             if [ -e .nix-minecraft-managed ]; then
               readarray -t to_delete < .nix-minecraft-managed
@@ -708,46 +810,63 @@ in
           ExecStartPre =
             let
               backup = file: ''
-                if [[ -e "${file}" ]]; then
-                  echo "${file} already exists, moving"
-                  mv "${file}" "${file}.bak"
+                if [[ -e ${file} ]]; then
+                  echo ${file} "already exists, moving"
+                  mv ${file} ${file}.bak
                 fi
               '';
               mkSymlinks = concatStringsSep "\n" (
-                mapAttrsToList (n: v: ''
-                  ${backup n}
-                  mkdir -p "$(dirname "${n}")"
+                mapAttrsToList (
+                  n_: v_:
+                  let
+                    n = escapeShellArg n_;
+                    v = escapeShellArg v_;
+                  in
+                  ''
+                    ${backup n}
+                    mkdir -p "$(dirname ${n})"
 
-                  ln -sf "${v}" "${n}"
+                    ln -sf ${v} ${n}
 
-                  ${markManaged n}
-                '') symlinks
+                    ${markManaged n}
+                  ''
+                ) symlinks
               );
 
               mkFiles = concatStringsSep "\n" (
-                mapAttrsToList (n: v: ''
-                  ${backup n}
-                  mkdir -p "$(dirname "${n}")"
+                mapAttrsToList (
+                  n_: v_:
+                  let
+                    n = escapeShellArg n_;
+                    v = escapeShellArg v_;
+                  in
+                  ''
+                    ${backup n}
+                    mkdir -p "$(dirname ${n})"
 
-                  # If it's not a binary, substitute env vars. Else, copy it normally
-                  if ${pkgs.file}/bin/file --mime-encoding "${v}" | grep -v '\bbinary$' -q; then
-                    ${pkgs.gawk}/bin/awk '{
-                      for(varname in ENVIRON)
-                        gsub("@"varname"@", ENVIRON[varname])
-                      print
-                    }' "${v}" > "${n}"
-                  else
-                    cp -r --dereference "${v}" -T "${n}"
-                    chmod +w -R "${n}"
-                  fi
+                    # If it's not a binary, substitute env vars. Else, copy it normally
+                    if ${pkgs.file}/bin/file --mime-encoding ${v} | grep -v '\bbinary$' -q; then
+                      ${pkgs.gawk}/bin/awk '{
+                        for(varname in ENVIRON)
+                          gsub("@"varname"@", ENVIRON[varname])
+                        print
+                      }' ${v} > ${n}
+                    else
+                      cp -r --dereference ${v} -T ${n}
+                      chmod +w -R ${n}
+                    fi
 
-                  ${markManaged n}
-                '') files
+                    ${markManaged n}
+                  ''
+                ) files
               );
             in
             getExe (
               pkgs.writeShellApplication {
                 name = "minecraft-server-${name}-start-pre";
+
+                excludeShellChecks = [ "SC2016" ];
+
                 text = ''
                   ${cleanAllManaged}
                   ${mkSymlinks}
@@ -818,7 +937,8 @@ in
             partOf = optional conf.managementSystem.systemd-socket.enable "minecraft-server-${name}.socket";
             after = [
               "network.target"
-            ] ++ optional conf.managementSystem.systemd-socket.enable "minecraft-server-${name}.socket";
+            ]
+            ++ optional conf.managementSystem.systemd-socket.enable "minecraft-server-${name}.socket";
 
             enable = conf.enable;
 
@@ -874,7 +994,8 @@ in
               RestrictSUIDSGID = true;
               SystemCallArchitectures = "native";
               UMask = "0007";
-            } // msConfig.serviceConfig;
+            }
+            // msConfig.serviceConfig;
 
             restartIfChanged = !conf.enableReload;
             reloadIfChanged = conf.enableReload;

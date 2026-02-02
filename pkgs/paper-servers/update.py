@@ -6,7 +6,7 @@ import requests
 from pathlib import Path
 from requests.adapters import HTTPAdapter, Retry
 
-ENDPOINT = "https://api.papermc.io/v2/projects/paper"
+ENDPOINT = "https://fill.papermc.io/v3/projects/paper"
 
 TIMEOUT = 5
 RETRIES = 5

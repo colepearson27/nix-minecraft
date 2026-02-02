@@ -2353,5 +2353,25 @@
     "libraries": [
       "net.fabricmc:intermediary:0.0.0"
     ]
+  },
+  "26.1-snapshot-2": {
+    "libraries": [
+      "net.fabricmc:intermediary:0.0.0"
+    ]
+  },
+  "26.1-snapshot-3": {
+    "libraries": [
+      "net.fabricmc:intermediary:0.0.0"
+    ]
+  },
+  "26.1-snapshot-4": {
+    "libraries": [
+      "net.fabricmc:intermediary:0.0.0"
+    ]
+  },
+  "26.1-snapshot-5": {
+    "libraries": [
+      "net.fabricmc:intermediary:0.0.0"
+    ]
   }
 }
