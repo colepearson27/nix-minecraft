@@ -2,14 +2,16 @@
 #!nix-shell -i python3 -p python3Packages.requests
 
 import json
-import requests
 from pathlib import Path
+
+import requests
 from requests.adapters import HTTPAdapter, Retry
 
 ENDPOINT = "https://fill.papermc.io/v3/projects/velocity"
 
 TIMEOUT = 5
 RETRIES = 5
+
 
 class TimeoutHTTPAdapter(HTTPAdapter):
     def __init__(self, *args, **kwargs):
@@ -28,11 +30,14 @@ class TimeoutHTTPAdapter(HTTPAdapter):
 
 def make_client():
     http = requests.Session()
-    retries = Retry(total=RETRIES, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504])
-    http.mount('https://', TimeoutHTTPAdapter(max_retries=retries))
+    retries = Retry(
+        total=RETRIES, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504]
+    )
+    http.mount("https://", TimeoutHTTPAdapter(max_retries=retries))
     return http
 
 
+<<<<<<< HEAD
 def get_game_versions(client):
     print("Fetching game versions")
     data = client.get(ENDPOINT).json()
@@ -41,11 +46,22 @@ def get_game_versions(client):
         for x in range(len(data["versions"][version])):
             versions.append(data["versions"][version][x])
     return versions
+=======
+def get_versions(client):
+    print("Fetching versions")
+    data = client.get(f"{ENDPOINT}/versions").json()
+    return sorted([v["version"]["id"] for v in data["versions"]])
+
+>>>>>>> e6f8bec35104ca5955efe73742da58d2823684f7
 
 def get_builds(version, client):
     print(f"Fetching builds for {version}")
     data = client.get(f"{ENDPOINT}/versions/{version}/builds").json()
+<<<<<<< HEAD
     return data
+=======
+    return sorted(data, key=lambda build: build["id"])
+>>>>>>> e6f8bec35104ca5955efe73742da58d2823684f7
 
 
 def main(lock, client):
@@ -56,8 +72,8 @@ def main(lock, client):
         version_builds = {}
         for build in get_builds(version, client):
             build_number = build["id"]
+            build_channel = build["channel"]
             build_sha256 = build["downloads"]["server:default"]["checksums"]["sha256"]
-            build_filename = build["downloads"]["server:default"]["name"]
             build_url = build["downloads"]["server:default"]["url"]
             output[version][build_number] = {
                 "url": build_url,
