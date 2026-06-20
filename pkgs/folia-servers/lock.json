@@ -1,5 +1,17 @@
 {
   "1.21.11": {
+    "14": {
+      "url": "https://fill-data.papermc.io/v1/objects/f52c408490a0225611e67907a3ca19f7e6da2c6bc899e715d5f46844e7103c39/folia-1.21.11-14.jar",
+      "sha256": "f52c408490a0225611e67907a3ca19f7e6da2c6bc899e715d5f46844e7103c39"
+    },
+    "13": {
+      "url": "https://fill-data.papermc.io/v1/objects/9b449d61d9d9024887f1a5c9c5bd68d5571a7e4053b2426ac783aa8c9530190f/folia-1.21.11-13.jar",
+      "sha256": "9b449d61d9d9024887f1a5c9c5bd68d5571a7e4053b2426ac783aa8c9530190f"
+    },
+    "12": {
+      "url": "https://fill-data.papermc.io/v1/objects/f017c9e544e85498ed983f723667ae3b87ba645d60e6182b6ded6db494ca0424/folia-1.21.11-12.jar",
+      "sha256": "f017c9e544e85498ed983f723667ae3b87ba645d60e6182b6ded6db494ca0424"
+    },
     "11": {
       "url": "https://fill-data.papermc.io/v1/objects/f4e9c5c374a53d17b6173cac35242c05c12217b656b6cc5dc07354cc37ec4066/folia-1.21.11-11.jar",
       "sha256": "f4e9c5c374a53d17b6173cac35242c05c12217b656b6cc5dc07354cc37ec4066"

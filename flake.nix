@@ -82,11 +82,8 @@
             fabric-server
             quilt-server
             paper-server
-<<<<<<< HEAD
             folia-server
-=======
             purpur-server
->>>>>>> ff6604fa8d25c1e1c135a261ddd6b3dcc4443129
             velocity-server
             minecraft-server
             nix-modrinth-prefetch
