@@ -4,7 +4,10 @@
   vanillaServers,
 }:
 let
-  inherit (lib.our) escapeVersion;
+  inherit (lib.our)
+    escapeVersion
+    sortVersions
+    ;
   inherit (lib)
     nameValuePair
     flatten
@@ -14,26 +17,29 @@ let
     versions
     ;
 
-  sortBy = attr: f: builtins.sort (a: b: f a.${attr} b.${attr});
-
   loaderLocks = lib.importJSON ./loader_locks.json;
   libraryLocks = lib.importJSON ./library_locks.json;
   gameLocks = lib.importJSON ./game_locks.json;
 
   packages = mapAttrsToList (
     gameVersion: builds:
-    sortBy "version" versionOlder (
+    sortVersions (
       mapAttrsToList (
         buildVersion: build:
+        let
+          vanilla-server = vanillaServers."vanilla-${escapeVersion gameVersion}";
+        in
         callPackage ./derivation.nix {
           inherit libraryLocks;
+
           build = build // {
             version = buildVersion;
           };
           gameVersion = gameLocks.${gameVersion} // {
             version = gameVersion;
           };
-          minecraft-server = vanillaServers."vanilla-${escapeVersion gameVersion}";
+          minecraft-server = vanilla-server;
+          jre_headless = vanilla-server.java;
         }
       ) builds
     )
