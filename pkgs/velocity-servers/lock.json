@@ -2259,6 +2259,7 @@
       "channel": "STABLE"
     }
   },
+  "3.5.0": {},
   "3.5.0-SNAPSHOT": {
     "567": {
       "url": "https://fill-data.papermc.io/v1/objects/7427b2dd4b55632c11c61dd447e717b383d3e41b36d4b5eb1e450c0f640a3a30/velocity-3.5.0-SNAPSHOT-567.jar",
@@ -2418,6 +2419,161 @@
     "600": {
       "url": "https://fill-data.papermc.io/v1/objects/d0f14d7993ca7b7f93a51f5d1dfeaf3f2149c8585611c4beaa7162b3b371d720/velocity-3.5.0-SNAPSHOT-600.jar",
       "sha256": "d0f14d7993ca7b7f93a51f5d1dfeaf3f2149c8585611c4beaa7162b3b371d720",
+      "channel": "STABLE"
+    },
+    "601": {
+      "url": "https://fill-data.papermc.io/v1/objects/0407642d1ed2883100eb823c2805523f191fa637db1f42ac0ec7ef29cbe455a9/velocity-3.5.0-SNAPSHOT-601.jar",
+      "sha256": "0407642d1ed2883100eb823c2805523f191fa637db1f42ac0ec7ef29cbe455a9",
+      "channel": "STABLE"
+    },
+    "602": {
+      "url": "https://fill-data.papermc.io/v1/objects/91bcd04e711ebddfc62a7d56ba6b3d9d56e587dedffdb4bb3f32961a7bb97730/velocity-3.5.0-SNAPSHOT-602.jar",
+      "sha256": "91bcd04e711ebddfc62a7d56ba6b3d9d56e587dedffdb4bb3f32961a7bb97730",
+      "channel": "STABLE"
+    },
+    "603": {
+      "url": "https://fill-data.papermc.io/v1/objects/ad0c287268b0c2426243abb75414cd5ed84766762db0aa81171e446a07ee8a00/velocity-3.5.0-SNAPSHOT-603.jar",
+      "sha256": "ad0c287268b0c2426243abb75414cd5ed84766762db0aa81171e446a07ee8a00",
+      "channel": "STABLE"
+    },
+    "604": {
+      "url": "https://fill-data.papermc.io/v1/objects/d9c57ade10f9cc2516473888aebc272e17793a13c486bb1ab5f511b11a2b7b04/velocity-3.5.0-SNAPSHOT-604.jar",
+      "sha256": "d9c57ade10f9cc2516473888aebc272e17793a13c486bb1ab5f511b11a2b7b04",
+      "channel": "STABLE"
+    },
+    "605": {
+      "url": "https://fill-data.papermc.io/v1/objects/0ec616020166465dacca3b790d3db2b246f8f7c13b3aaacaae60c825744a66e0/velocity-3.5.0-SNAPSHOT-605.jar",
+      "sha256": "0ec616020166465dacca3b790d3db2b246f8f7c13b3aaacaae60c825744a66e0",
+      "channel": "STABLE"
+    },
+    "606": {
+      "url": "https://fill-data.papermc.io/v1/objects/f763b42b951892c62ecdee2e532a7788c9929a4468068227daea71d84f2b39f2/velocity-3.5.0-SNAPSHOT-606.jar",
+      "sha256": "f763b42b951892c62ecdee2e532a7788c9929a4468068227daea71d84f2b39f2",
+      "channel": "STABLE"
+    },
+    "607": {
+      "url": "https://fill-data.papermc.io/v1/objects/8f5bab011b9afdcb8f0efc4c0ea16cc621371678dd72c3ebb6e0245b67a0ab0f/velocity-3.5.0-SNAPSHOT-607.jar",
+      "sha256": "8f5bab011b9afdcb8f0efc4c0ea16cc621371678dd72c3ebb6e0245b67a0ab0f",
+      "channel": "STABLE"
+    },
+    "608": {
+      "url": "https://fill-data.papermc.io/v1/objects/3b25292797526ce2f354f99bad42076014199c678c14a487220acaf97d07ef59/velocity-3.5.0-SNAPSHOT-608.jar",
+      "sha256": "3b25292797526ce2f354f99bad42076014199c678c14a487220acaf97d07ef59",
+      "channel": "STABLE"
+    },
+    "609": {
+      "url": "https://fill-data.papermc.io/v1/objects/0c3d16b70ed757638b696a9a87d670b4301f23a6fef30c3acbbd9b0e0d7b29bb/velocity-3.5.0-SNAPSHOT-609.jar",
+      "sha256": "0c3d16b70ed757638b696a9a87d670b4301f23a6fef30c3acbbd9b0e0d7b29bb",
+      "channel": "STABLE"
+    }
+  },
+  "3.5.1": {
+    "615": {
+      "url": "https://fill-data.papermc.io/v1/objects/b4e3164df5377346854dc6cb9e6a78022b1946ff69e89676313f5f6f1c6f0fb3/velocity-3.5.1-615.jar",
+      "sha256": "b4e3164df5377346854dc6cb9e6a78022b1946ff69e89676313f5f6f1c6f0fb3",
+      "channel": "RECOMMENDED"
+    }
+  },
+  "3.6.0-SNAPSHOT": {
+    "611": {
+      "url": "https://fill-data.papermc.io/v1/objects/70beea6e1f84dd8ac6da5a7024cde629240f5360ec227eb78063c07469790eb9/velocity-3.6.0-SNAPSHOT-611.jar",
+      "sha256": "70beea6e1f84dd8ac6da5a7024cde629240f5360ec227eb78063c07469790eb9",
+      "channel": "STABLE"
+    },
+    "612": {
+      "url": "https://fill-data.papermc.io/v1/objects/9fda3d2d453d2d8e1328829a9b4c252b7a8c8da12022f8724536c3956017c236/velocity-3.6.0-SNAPSHOT-612.jar",
+      "sha256": "9fda3d2d453d2d8e1328829a9b4c252b7a8c8da12022f8724536c3956017c236",
+      "channel": "STABLE"
+    },
+    "613": {
+      "url": "https://fill-data.papermc.io/v1/objects/a87eea534bd483209aa5ccb03822cb14d5006796d9c18a59e6e34cfd3c28b5b0/velocity-3.6.0-SNAPSHOT-613.jar",
+      "sha256": "a87eea534bd483209aa5ccb03822cb14d5006796d9c18a59e6e34cfd3c28b5b0",
+      "channel": "STABLE"
+    }
+  },
+  "4.0.0": {
+    "6": {
+      "url": "https://fill-data.papermc.io/v1/objects/4540289f48c83e305fc2f2c495a84d1f4d0b7f360830251e169dd5a208740e70/velocity-4.0.0-6.jar",
+      "sha256": "4540289f48c83e305fc2f2c495a84d1f4d0b7f360830251e169dd5a208740e70",
+      "channel": "STABLE"
+    }
+  },
+  "4.0.0-SNAPSHOT": {
+    "1": {
+      "url": "https://fill-data.papermc.io/v1/objects/d227272040e5029e9b32344ba0c5f6317fe3538526ed87e41e14ece6f0e4e539/velocity-4.0.0-SNAPSHOT-1.jar",
+      "sha256": "d227272040e5029e9b32344ba0c5f6317fe3538526ed87e41e14ece6f0e4e539",
+      "channel": "STABLE"
+    },
+    "2": {
+      "url": "https://fill-data.papermc.io/v1/objects/5c09f60201ff94602f104b96d29bf9e95bb5f47de6103d398e1db61927b2aaa8/velocity-4.0.0-SNAPSHOT-2.jar",
+      "sha256": "5c09f60201ff94602f104b96d29bf9e95bb5f47de6103d398e1db61927b2aaa8",
+      "channel": "STABLE"
+    },
+    "3": {
+      "url": "https://fill-data.papermc.io/v1/objects/c9fedc954d77b940d2328fd4bc17ff4eac27ca3244ffb604e45dd07f29c1f726/velocity-4.0.0-SNAPSHOT-3.jar",
+      "sha256": "c9fedc954d77b940d2328fd4bc17ff4eac27ca3244ffb604e45dd07f29c1f726",
+      "channel": "STABLE"
+    },
+    "4": {
+      "url": "https://fill-data.papermc.io/v1/objects/c490dee73dd632c17abbb2e4c365e63a8943e7438586d17d23c41f125108c485/velocity-4.0.0-SNAPSHOT-4.jar",
+      "sha256": "c490dee73dd632c17abbb2e4c365e63a8943e7438586d17d23c41f125108c485",
+      "channel": "STABLE"
+    },
+    "5": {
+      "url": "https://fill-data.papermc.io/v1/objects/7dc974ba4b3094d05d308032790a22e5348845c46d82c664730b169ce2b4ea79/velocity-4.0.0-SNAPSHOT-5.jar",
+      "sha256": "7dc974ba4b3094d05d308032790a22e5348845c46d82c664730b169ce2b4ea79",
+      "channel": "STABLE"
+    }
+  },
+  "4.1.0-SNAPSHOT": {
+    "7": {
+      "url": "https://fill-data.papermc.io/v1/objects/0fb692511ee117611c6caae87fe8f2b041e7f56332e0dd4ec5081bba1eedddf0/velocity-4.1.0-SNAPSHOT-7.jar",
+      "sha256": "0fb692511ee117611c6caae87fe8f2b041e7f56332e0dd4ec5081bba1eedddf0",
+      "channel": "STABLE"
+    },
+    "8": {
+      "url": "https://fill-data.papermc.io/v1/objects/95ba0941466ec883e698cb5c69ba032726a5ce44eb81d0ce2fa1dc89b98524e1/velocity-4.1.0-SNAPSHOT-8.jar",
+      "sha256": "95ba0941466ec883e698cb5c69ba032726a5ce44eb81d0ce2fa1dc89b98524e1",
+      "channel": "STABLE"
+    },
+    "9": {
+      "url": "https://fill-data.papermc.io/v1/objects/635ffe27b4fe1b97e61479012121d4e7c61a9eec99e6bd5a1f923053c2a259ce/velocity-4.1.0-SNAPSHOT-9.jar",
+      "sha256": "635ffe27b4fe1b97e61479012121d4e7c61a9eec99e6bd5a1f923053c2a259ce",
+      "channel": "STABLE"
+    },
+    "10": {
+      "url": "https://fill-data.papermc.io/v1/objects/5e7b6b5e94542116d713a1da4d6aae31c3c82ee253720536b1f0035cba010beb/velocity-4.1.0-SNAPSHOT-10.jar",
+      "sha256": "5e7b6b5e94542116d713a1da4d6aae31c3c82ee253720536b1f0035cba010beb",
+      "channel": "STABLE"
+    },
+    "11": {
+      "url": "https://fill-data.papermc.io/v1/objects/8290bd8bb46135ad3b916ceb780bc117fe0c8a603e79016c37a1e74315714f94/velocity-4.1.0-SNAPSHOT-11.jar",
+      "sha256": "8290bd8bb46135ad3b916ceb780bc117fe0c8a603e79016c37a1e74315714f94",
+      "channel": "STABLE"
+    },
+    "12": {
+      "url": "https://fill-data.papermc.io/v1/objects/619031b094211f2732b7f223593a6c2c7b9152b1d28f5110e086b41a02d65d68/velocity-4.1.0-SNAPSHOT-12.jar",
+      "sha256": "619031b094211f2732b7f223593a6c2c7b9152b1d28f5110e086b41a02d65d68",
+      "channel": "STABLE"
+    },
+    "13": {
+      "url": "https://fill-data.papermc.io/v1/objects/acfce69f24ab8e50c680462d20c6fad916ef9439105e921be2774585dfe81963/velocity-4.1.0-SNAPSHOT-13.jar",
+      "sha256": "acfce69f24ab8e50c680462d20c6fad916ef9439105e921be2774585dfe81963",
+      "channel": "STABLE"
+    },
+    "14": {
+      "url": "https://fill-data.papermc.io/v1/objects/d94545b4fc9a7a7b7eae3e29999b1882f9ca3b5b30873b173d84199d3b84039b/velocity-4.1.0-SNAPSHOT-14.jar",
+      "sha256": "d94545b4fc9a7a7b7eae3e29999b1882f9ca3b5b30873b173d84199d3b84039b",
+      "channel": "STABLE"
+    },
+    "15": {
+      "url": "https://fill-data.papermc.io/v1/objects/52edcac52a8f5a07dc9f0a76a2d12961c2dcdb681df5f6de441418ea71b4c5fa/velocity-4.1.0-SNAPSHOT-15.jar",
+      "sha256": "52edcac52a8f5a07dc9f0a76a2d12961c2dcdb681df5f6de441418ea71b4c5fa",
+      "channel": "STABLE"
+    },
+    "16": {
+      "url": "https://fill-data.papermc.io/v1/objects/aebade8be3b15d7c3c61514a50ce857cbf78ee87bd32e8d16d2352c6ca3e472f/velocity-4.1.0-SNAPSHOT-16.jar",
+      "sha256": "aebade8be3b15d7c3c61514a50ce857cbf78ee87bd32e8d16d2352c6ca3e472f",
       "channel": "STABLE"
     }
   }
