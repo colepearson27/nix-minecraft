@@ -1,4 +1,44 @@
 {
+  "26.2": {
+    "7": {
+      "url": "https://fill-data.papermc.io/v1/objects/128a634192261cd38bb4a5dc54075018a0f896fd6c6f529e37dca6e99e32b3b3/folia-26.2-7.jar",
+      "sha256": "128a634192261cd38bb4a5dc54075018a0f896fd6c6f529e37dca6e99e32b3b3"
+    },
+    "6": {
+      "url": "https://fill-data.papermc.io/v1/objects/9a728381da3a3bea6732ee210519f8f6ab7d6affe132a430ee167c44c4603d08/folia-26.2-6.jar",
+      "sha256": "9a728381da3a3bea6732ee210519f8f6ab7d6affe132a430ee167c44c4603d08"
+    },
+    "5": {
+      "url": "https://fill-data.papermc.io/v1/objects/faae55d240337cd6341fee2ce1512dafe658cfb03c88f6b213fd15c37bb07307/folia-26.2-5.jar",
+      "sha256": "faae55d240337cd6341fee2ce1512dafe658cfb03c88f6b213fd15c37bb07307"
+    },
+    "4": {
+      "url": "https://fill-data.papermc.io/v1/objects/19c81c308ba4de4b9fc0a61860c86281836d26ac046f696ea241766eea4b2468/folia-26.2-4.jar",
+      "sha256": "19c81c308ba4de4b9fc0a61860c86281836d26ac046f696ea241766eea4b2468"
+    },
+    "3": {
+      "url": "https://fill-data.papermc.io/v1/objects/fe276d78773997a99e4c22420db65182404952175f739792ffc09d67d33b67e5/folia-26.2-3.jar",
+      "sha256": "fe276d78773997a99e4c22420db65182404952175f739792ffc09d67d33b67e5"
+    },
+    "1": {
+      "url": "https://fill-data.papermc.io/v1/objects/6726da42d6a4edc4961a43cdccfd7ebf5fea75e7b1342266532ed143df6736e7/folia-26.2-1.jar",
+      "sha256": "6726da42d6a4edc4961a43cdccfd7ebf5fea75e7b1342266532ed143df6736e7"
+    }
+  },
+  "26.1.2": {
+    "8": {
+      "url": "https://fill-data.papermc.io/v1/objects/607afd1c3320008e1ffd2eaee6780ace4419d5f8c527b75e79f259be79ebf57b/folia-26.1.2-8.jar",
+      "sha256": "607afd1c3320008e1ffd2eaee6780ace4419d5f8c527b75e79f259be79ebf57b"
+    },
+    "7": {
+      "url": "https://fill-data.papermc.io/v1/objects/584449ccc76263c2b7b0a53e1469ecb8bc0e78059504c565f8978eb32f09e3e0/folia-26.1.2-7.jar",
+      "sha256": "584449ccc76263c2b7b0a53e1469ecb8bc0e78059504c565f8978eb32f09e3e0"
+    },
+    "6": {
+      "url": "https://fill-data.papermc.io/v1/objects/519bbb77ab04f32598c851df59e99bf9f02faca9ac2c3d4c4998396159a00af2/folia-26.1.2-6.jar",
+      "sha256": "519bbb77ab04f32598c851df59e99bf9f02faca9ac2c3d4c4998396159a00af2"
+    }
+  },
   "1.21.11": {
     "14": {
       "url": "https://fill-data.papermc.io/v1/objects/f52c408490a0225611e67907a3ca19f7e6da2c6bc899e715d5f46844e7103c39/folia-1.21.11-14.jar",

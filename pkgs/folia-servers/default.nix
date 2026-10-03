@@ -3,7 +3,7 @@
   lib,
   jdk8,
   jdk11,
-  jdk,
+  jdk25,
   vanillaServers,
 }:
 let
@@ -30,7 +30,7 @@ let
     else if versionOlder v "1.16.5" then
       jdk11
     else
-      jdk;
+      jdk25;
 
   packages = mapAttrsToList (
     mcVersion: builds:
