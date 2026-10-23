@@ -37,31 +37,15 @@ def make_client():
     return http
 
 
-<<<<<<< HEAD
-def get_game_versions(client):
-    print("Fetching game versions")
-    data = client.get(ENDPOINT).json()
-    versions = []
-    for version in data["versions"]:
-        for x in range(len(data["versions"][version])):
-            versions.append(data["versions"][version][x])
-    return versions
-=======
 def get_versions(client):
     print("Fetching versions")
     data = client.get(f"{ENDPOINT}/versions").json()
     return sorted([v["version"]["id"] for v in data["versions"]])
 
->>>>>>> e6f8bec35104ca5955efe73742da58d2823684f7
-
 def get_builds(version, client):
     print(f"Fetching builds for {version}")
     data = client.get(f"{ENDPOINT}/versions/{version}/builds").json()
-<<<<<<< HEAD
-    return data
-=======
     return sorted(data, key=lambda build: build["id"])
->>>>>>> e6f8bec35104ca5955efe73742da58d2823684f7
 
 
 def main(lock, client):
